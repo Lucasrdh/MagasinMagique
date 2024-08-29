@@ -68,6 +68,12 @@ class Magasin {
                     }
                 }
             }
+            if (!items[i].name.equals("Kryptonite")) {
+                if (items[i].quality > 50) {
+                    throw new IllegalArgumentException("La qualité ne peut pas être supérieure à 50");
+                }
+            }
         }
     }
 }
+
