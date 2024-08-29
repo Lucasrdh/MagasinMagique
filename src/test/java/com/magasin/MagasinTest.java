@@ -166,4 +166,16 @@ class MagasinTest {
     assertEquals("Comté", app.items[0].name);
 }
 
+
+    @RepeatedTest(10)
+void PouvoirMagique() {
+        int quality = random.nextInt(50) +1;
+        int sellIn = random.nextInt(50) +1;
+    Item[] items = new Item[] { new Item("PouvoirMagique", sellIn, quality) };
+    Magasin app = new Magasin(items);
+    app.updateQuality();
+    assertEquals(sellIn-1, app.items[0].sellIn);
+    assertEquals(quality-2, app.items[0].quality);
+    assertEquals("PouvoirMagique", app.items[0].name);
+}
 }
